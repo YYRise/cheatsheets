@@ -1,0 +1,49 @@
+---
+tags: [ php_time ]
+---
+
+#当前时间
+echo date("Y-m-d H:i:s",time());
+
+#5分钟前
+echo date("Y-m-d H:i:s",time()-60*5);
+
+#5分钟前
+echo date("Y-m-d H:i:s",strtotime("-5 min"));
+
+#5分钟前的时间戳
+echo strtotime("-5 min");
+
+#当前时间戳
+echo time();
+
+#世界末日时间戳
+echo "世界末日时间戳为：".strtotime("2012-12-21");
+
+#将时间戳转化为系统时间
+echo date('Y-m-d H:i:s',"1228348800");
+ 
+#PHP时间戳函数获取英文文本日期时间 示例如下：
+#便于比较，使用date将当时间戳与指定时间戳转换成系统时间
+
+#当前时间
+echo date("Y-m-d H:i:s",time());
+
+#明天此时时间strtotime(”+1 day”)
+echo date("Y-m-d H:i:s",strtotime("+1 day"));
+
+#昨天此时时间strtotime(”-1 day”)
+echo date("Y-m-d H:i:s",strtotime("-1 day"));
+
+#下星期时间strtotime("+1 week")
+echo date("Y-m-d H:i:s",strtotime("+1 week"));
+
+#上个星期此时时间strtotime("-1 week")
+echo date("Y-m-d H:i:s",strtotime("-1 week"));
+
+#下星期几的时间
+echo date("Y-m-d H:i:s",strtotime("next Thursday"));
+
+#上星期几的时间
+echo date("Y-m-d H:i:s",strtotime("last Thursday"));
+
