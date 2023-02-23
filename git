@@ -1,6 +1,15 @@
 ---
 tags: [ vcs ]
 ---
+# 忽略本地文件修改
+git update-index --assume-unchanged <文件>
+
+# 恢复
+git update-index --no-assume-unchanged <文件> 
+
+# 查看当前忽略的文件列表
+git ls-files -v | grep -e "^[hsmrck]"
+
 # To set your identity:
 git config --global user.name <name>
 git config --global user.email <email>
