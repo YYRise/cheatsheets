@@ -110,13 +110,31 @@ go bug
 # Running and Comparing Benchmarks
 go test -bench=. ./... # Run all benchmarks and tests
 go test -run=^$ -bench=. ./... # Run all benchmarks (and no tests)
+go test -bench='Fib$' . # 只运行以 Fib 结尾的 benchmark 用例
 go test -run=^$ -bench=^BenchmarkFoo$ ./... # Run only the BenchmarkFoo benchmark (and no tests)
 go test -bench=. -benchmem ./... # Forces the output of memory allocation statistics
+
+# 指定时间；默认时间是1秒；
 go test -bench=. -benchtime=5s ./... # Run each benchmark test for at least 5 seconds
+
+# 指定次数；
 go test -bench=. -benchtime=500x ./... # Run each benchmark test for exactly 500 iterations
+
+# 指定轮数
 go test -bench=. -count=3 ./... # Repeat each benchmark test 3 times over
+
+# BenchmarkFib-8 中的 -8 即 GOMAXPROCS，默认等于 CPU 核数
 go test -bench=. -cpu=1,4,8 ./... # Run benchmarks with GOMAXPROCS set to 1, 4 and 8
 
+# 定时器相关函数
+b.ResetTimer() // 重置定时器
+b.StartTimer() // 开始定时器
+b.StopTimer() // 结束定时器
+
+# benchmark 生成 profile
+-cpuprofile=$FILE
+-memprofile=$FILE, -memprofilerate=N 调整记录速率为原来的 1/N。
+-blockprofile=$FILE
 
 # Comparing changes between benchmarks
 go get golang.org/x/tools/cmd/benchcmp@latest # Install the compare tool.
