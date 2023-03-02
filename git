@@ -149,6 +149,12 @@ git diff master...feature
 # To perform an interactive rebase for the prior 7 commits:
 git rebase -i @~7
 
+# 每次修改的文件列表, 显示状态
+git log --name-status
+
+# 每次修改的文件列表
+git log --name-only 
+
 # To diff files WITHOUT considering them a part of git:
 # This can be used to diff files that are not in a git repo!
 git diff --no-index path/to/file/A path/to/file/B
