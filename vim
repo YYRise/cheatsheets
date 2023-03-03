@@ -55,11 +55,22 @@ dd              delete a line
 d{motion}       delete text that {motion} moves over
 
 # Search and replace with the `:substitute` (aka `:s`) command
+格式:[range]s/{pattern}/{string}/[flags]
+range:默认光标所在的行；%表示整个文件
+string: 省略的话删除与parrern匹配的字符串；:s/foo//g #将光标当前行的foo替换为空字符串
 
-:s/foo/bar/	replace the first match of 'foo' with 'bar' on the current line only
-:s/foo/bar/g	replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
-:%s/foo/bar/g	replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
-:%s/foo/bar/gc	ask to manually confirm (`c` flag) each replacement
+:s/foo/bar/	    replace the first match of 'foo' with 'bar' on the current line only
+:s/foo/bar/g	    replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
+:%s/foo/bar/g	    replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
+:%s/foo/bar/gc	    ask to manually confirm (`c` flag) each replacement；c:交互模式
+:3,10s/foo/bar/g    指定绝对行号的命令。将从第3行到第10行中与模式foo匹配的项替换为bar。
+:.,$s/foo/bar/g	    点.字符表示光标所在行，而$美元符号表示最后一行。将会从光标所在行到最后一行中搜索foo模式然后替换为 bar
+:.,+4s/foo/bar/g    表示从光标所在行开始搜索，并在光标所在行加4行然后结束搜索模式foo，并用bar替换与模式匹配的项。
+:s/Foo/bar/gi	    在当前行忽略大小写进行搜索
+:s/Foo\c/bar/g	    在当前行忽略大小写进行搜索
+:5,20s/^/#/	    在5到20行前添加#,恢复之前的更改，运行命令:5,20s/^#//
+:%s/app|or|ma/f/g   在整个文件搜索app，or和ma，然后使用f替换与模式匹配的项。
+:%s/\s+$//e	    这是一个非常有用的命令，它将在整个文件中搜索末尾的空白符并删除。\s是正则表达式，匹配所有空白符，+表示一个或者多个，$表示行尾
 
 # Preceding a motion or edition with a number repeats it 'n' times
 # Examples:
