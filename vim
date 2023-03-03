@@ -67,6 +67,7 @@ d{motion}       delete text that {motion} moves over
 2dw         deletes 2 words
 5yy         copies 5 lines
 42G         go to line 42
+ggdG	    删除所有内容
 
 # Multiple windows
 :e filename      - edit another file
