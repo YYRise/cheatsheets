@@ -1,6 +1,8 @@
 ---
 tags: [ ssh ]
 ---
+
+# 自动将公钥拷贝到远程服务器的~/.ssh/authorized_keys文件。如果~/.ssh/authorized_keys文件不存在，ssh-copy-id命令会自动创建该文件。
 # To copy your keys listed in `ssh-add -L` to a remote host:
 ssh-copy-id <user>@<host>
 
@@ -9,3 +11,5 @@ ssh-copy-id <user>@<host> -p 2222
 
 # To copy one single public key to a remote host on a non-standard port:
 ssh-copy-id -i ~/.ssh/a_public_key.pub "username@host -p 2222"
+# -i: 用来指定公钥文件
+# 公钥文件可以不指定pub后缀名
