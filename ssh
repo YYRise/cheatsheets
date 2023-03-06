@@ -1,6 +1,11 @@
 ---
 tags: [ ssh ]
 ---
+# 权限
+~/.ssh目录的权限必须是700
+~/.ssh/authorized_keys文件权限必须是600或者644
+用户家目录权限必须是700或750或755，775和777权限 ssh免密将失效
+
 # To ssh via pem file (which normally needs 0600 permissions):
 ssh -i <pemfile> <user>@<host>
 
