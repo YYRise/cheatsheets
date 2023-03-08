@@ -50,3 +50,6 @@ TZ=CET date
 
 # To show the time on the west coast of the US (use tzselect(1) to find TZ):
 TZ='America/Los_Angeles' date
+
+# 时区设置东8区
+sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
