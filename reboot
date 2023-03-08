@@ -1,2 +1,8 @@
 # reboot at 22:00
 shutdown -r 22:00
+
+# 重启
+reboot 或 init 6
+
+# 关机
+halt 或 init 0 或 poweroff

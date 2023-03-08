@@ -1,11 +1,21 @@
+---
+tags:[shutdown]
+---
 # To reboot the system immediately:
+# 立即重启
 shutdown -r now
 
 # To shut system down immediately:
+# 立即关机
 shutdown -h now
 
 # To reboot system after 5 minutes:
+# 5分钟后重启
 shutdown -r +5
 
+# 5:30 关机
+shutdown -h 05:30
+
 # To cancel a scheduled shutdown:
+# 取消已经执行的 shutdown 命令
 shutdown -c
