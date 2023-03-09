@@ -38,3 +38,9 @@ https://crontab.guru/
 
 # view log
 journalctl | grep CRON
+
+# 查看所有用户的crontab 任务
+cat /etc/passwd | cut -f 1 -d : |xargs -I {} crontab -l -u {}
+
+# 查看单个用户的crontab 任务
+crontab -l -u 用户名
