@@ -14,6 +14,10 @@ git ls-files -v | grep -e "^[hsmrck]"
 git config --global user.name <name>
 git config --global user.email <email>
 
+# 设置当前仓库的用户名和邮箱
+git config user.name <name>
+git config user.email <email>
+
 # To set your editor:
 git config --global core.editor <editor>
 
