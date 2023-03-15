@@ -1,6 +1,7 @@
 ---
-tags:[shutdown]
+tags: [shudown]
 ---
+
 # To reboot the system immediately:
 # 立即重启
 shutdown -r now
