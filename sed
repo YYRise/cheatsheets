@@ -1,3 +1,18 @@
+# Sed是Stream EDitor的缩写
+# -i 表示直接进行文件操作，而不在终端上显示结果
+
+# 删除第1行/最后1行/5到8行/第1、第5和最后一行/除第3到6行以外的其他行
+sed -i '1d'/'$d'/'5,8d'/'1d;5d;$d'/'3,6!d' <file>
+
+# 配合逻辑非 ! 使用，删除第3到6行以外的其他行
+sed -i '3,6!d' <file>
+
+# 删除在 1 到 6 行内有 Linux 这个词的内容
+sed -i '1,6{/Linux/d;}' <file>
+
+# 有 System 或 Linux 的行
+sed -i '/System\|Linux/d' <file>
+
 # To replace all occurrences of "day" with "night" and write to stdout:
 sed 's/day/night/g' <file>
 
