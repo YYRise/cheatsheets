@@ -24,6 +24,9 @@ git config --global core.editor <editor>
 # To enable color:
 git config --global color.ui true
 
+# git bash终端显示中文
+git config --global core.quotepath false
+
 # To stage all changes for commit:
 git add --all
 
