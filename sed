@@ -10,8 +10,14 @@ sed -i '3,6!d' <file>
 # 删除在 1 到 6 行内有 Linux 这个词的内容
 sed -i '1,6{/Linux/d;}' <file>
 
-# 有 System 或 Linux 的行
+# 有 System 或 Linux 的行删除
 sed -i '/System\|Linux/d' <file>
+
+# 把windows系统dos编码格式文件---> unix格式
+sed -i 's/\r$//g' <file>
+
+# unix格式-->windows系统dos格式
+sed -i 's/$/\r\n/' <file>
 
 # To replace all occurrences of "day" with "night" and write to stdout:
 sed 's/day/night/g' <file>
