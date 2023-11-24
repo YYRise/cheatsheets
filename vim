@@ -158,3 +158,7 @@ nmap <F2> "= system("uuidgen")[:-2]<C-M>P
 :x,.d           # 从ｘ行删除到当前行；
 :.,xd           # 从当前行删除到x行；
 :g/^\s*$/d      #  删除只有空白的行
+
+# 文件格式
+:set ff 	# 查看当前文件格式; 输出 fileformat=dos；win格式，sh文件在unix下执行报错
+:set ff=unix 	# 设置当前文件格式为unix格式
