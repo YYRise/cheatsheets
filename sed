@@ -15,6 +15,7 @@ sed -i '/System\|Linux/d' <file>
 
 # 把windows系统dos编码格式文件---> unix格式
 sed -i 's/\r$//g' <file>
+find . --name "*.sh" | xargs sed -i 's/\r$//g'
 
 # unix格式-->windows系统dos格式
 sed -i 's/$/\r\n/' <file>
